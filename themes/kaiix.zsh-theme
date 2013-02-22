@@ -2,7 +2,7 @@ autoload colors; colors;
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 setopt prompt_subst
 
-PROMPT='%{$fg[red]%}%m %{$reset_color%}%n %{$reset_color%}%{$fg[white]%}%{$fg_bold[white]%}%~%{$reset_color%} $(git_prompt_info)
+PROMPT='%{$fg[red]%}%m %{$reset_color%}%n %{$reset_color%}%{$fg[green]%}%~%{$reset_color%} $(git_prompt_info)
 %{$fg[green]%}$ %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}["
