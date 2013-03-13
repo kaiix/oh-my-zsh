@@ -38,6 +38,8 @@ for plugin ($plugins); do
   fi
 done
 
+typeset -U fpath
+
 # Load and run compinit
 autoload -U compinit
 compinit -i
