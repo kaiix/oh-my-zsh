@@ -43,7 +43,7 @@ alias svndiff='svn diff |less -x4FRSXs'
 
 svnaddx()
 {
-    svn st|grep ^?|awk '{print $2}'|xargs -I{} svn add {}@
+    svn st|grep '^?'|awk '{print $2}'|xargs -I{} svn add {}@
 }
 alias ssh_ubuntu="ssh 127.0.0.1 -p2222"
 
