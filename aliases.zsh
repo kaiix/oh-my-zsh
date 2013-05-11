@@ -11,6 +11,8 @@ alias df='df -h'
 alias du='du -h -c'
 alias mkdir='mkdir -p -v'
 alias cddl='cd ~/Downloads/'
+alias less='less -R'
+alias ack='ack --pager=less'
 
 alias vihosts='sudo vim /etc/hosts'
 alias rmattr="xattr -d com.apple.quarantine"
@@ -26,6 +28,10 @@ alias doctest='python -m doctest -v'
 # django
 alias dbshell='python manage.py dbshell'
 alias djshell='python manage.py shell'
+
+# suffix aliases
+alias -s py=vim
+alias -s log="less -MN"
 
 runserver ()
 {
