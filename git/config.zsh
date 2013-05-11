@@ -1,0 +1,1 @@
+export GIT_REVIEW_DIFF=colordiff
