@@ -15,7 +15,8 @@ alias less='less -R'
 alias ack='ack --pager=less'
 
 alias vihosts='sudo vim /etc/hosts'
-alias rmattr="xattr -d com.apple.quarantine"
+alias rmattr="xattr -r -d com.apple.quarantine"
+alias flushdns="dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 #alias runserver='python manage.py runserver'
 
@@ -30,7 +31,6 @@ alias dbshell='python manage.py dbshell'
 alias djshell='python manage.py shell'
 
 # suffix aliases
-alias -s py=vim
 alias -s log="less -MN"
 
 runserver ()
@@ -51,7 +51,10 @@ svnaddx()
 {
     svn st|grep '^?'|awk '{print $2}'|xargs -I{} svn add {}@
 }
-alias ssh_ubuntu="ssh 127.0.0.1 -p2222"
+
+alias ubuntu_start=VBoxManage list vms|grep Ubuntu |awk '{ print $2 }'|xargs -I {} vboxmanage startvm --type headless {}
+alias ubuntu_ssh="ssh 127.0.0.1 -p2222"
+alias ubuntu_stop=VBoxManage list vms|grep Ubuntu |awk '{ print $2 }'|xargs -I {} vboxmanage controlvm {} savestate
 
 # misc
 drop ()
