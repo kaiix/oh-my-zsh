@@ -1,7 +1,7 @@
 alias sz='source ~/.zshrc'
 
 # system
-alias ls='ls -aFG'
+alias ls='ls -aFG --color=auto'
 alias ll='ls -l'
 alias rm='rm -i'
 alias mv='mv -iv'
