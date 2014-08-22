@@ -52,10 +52,6 @@ svnaddx()
     svn st|grep '^?'|awk '{print $2}'|xargs -I{} svn add {}@
 }
 
-alias ubuntu_start=VBoxManage list vms|grep Ubuntu |awk '{ print $2 }'|xargs -I {} vboxmanage startvm --type headless {}
-alias ubuntu_ssh="ssh 127.0.0.1 -p2222"
-alias ubuntu_stop=VBoxManage list vms|grep Ubuntu |awk '{ print $2 }'|xargs -I {} vboxmanage controlvm {} savestate
-
 # misc
 drop ()
 {
