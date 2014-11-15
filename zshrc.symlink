@@ -40,6 +40,8 @@ source $ZSH/aliases.zsh
 source $ZSH/git/aliases.zsh
 source $ZSH/git/config.zsh
 
+unsetopt correct
+
 autoload -U bashcompinit
 bashcompinit
 for bash_completion ($ZSH/bash_completion.d/*.bash); do
