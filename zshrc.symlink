@@ -41,6 +41,7 @@ source $ZSH/git/aliases.zsh
 source $ZSH/git/config.zsh
 
 unsetopt correct
+setopt no_hist_verify
 
 autoload -U bashcompinit
 bashcompinit
