@@ -15,3 +15,5 @@ case $TERM in
         settab;settitle
         ;;
 esac
+
+alias ack='ack --pager=less'

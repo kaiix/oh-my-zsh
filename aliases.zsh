@@ -1,8 +1,8 @@
 alias sz='source ~/.zshrc'
 
 # system
-alias ls='ls -aFG'
-alias ll='ls -l'
+alias ls='ls --color=auto -AF'
+alias ll='ls --color=auto -lhAtF'
 alias rm='rm -i'
 alias mv='mv -iv'
 alias ..='cd ..'
@@ -12,7 +12,8 @@ alias du='du -h -c'
 alias mkdir='mkdir -p -v'
 alias cddl='cd ~/Downloads/'
 alias less='less -R'
-alias ack='ack --pager=less'
+alias ack='ack-grep --pager=less'
+alias sshx='TERM=xterm ssh'
 
 alias vihosts='sudo vim /etc/hosts'
 alias rmattr="xattr -r -d com.apple.quarantine"

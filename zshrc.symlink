@@ -32,7 +32,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-completions vi-mode)
+plugins=(zsh-completions vi-mode git colored-man z)
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/config.zsh
@@ -42,6 +42,8 @@ source $ZSH/git/config.zsh
 
 autoload -U compinit && compinit
 unsetopt correct
+setopt no_hist_verify
+
 autoload -U bashcompinit
 bashcompinit
 for bash_completion ($ZSH/bash_completion.d/*.bash); do
