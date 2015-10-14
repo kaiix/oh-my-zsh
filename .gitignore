@@ -7,4 +7,4 @@ custom
 *.swp
 !custom/example.zshcache
 cache/
-completions/_brew
+completions/
