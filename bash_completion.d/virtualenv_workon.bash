@@ -1,4 +1,4 @@
-VENV_HOME=~/.venv
+VENV_HOME=~/.venvs
 
 # virtualenv workon
 #---------------------------
