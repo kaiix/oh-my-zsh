@@ -1,11 +1,5 @@
 cdpath=(. ~/projects/)
 
-# Misc
-if [ `uname` = "Darwin" ]
-then
-    . `brew --prefix`/etc/profile.d/z.sh
-fi
-
 # iTerm2
 case $TERM in
     *xterm*|ansi)
