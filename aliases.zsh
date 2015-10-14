@@ -1,16 +1,9 @@
 alias sz='source ~/.zshrc'
 
 # system
-alias ls='ls --color=auto -AF'
-alias ll='ls --color=auto -lhAtF'
-alias rm='rm -i'
-alias mv='mv -iv'
-alias ..='cd ..'
-alias ...='cd ../..'
 alias df='df -h'
 alias du='du -h -c'
 alias mkdir='mkdir -p -v'
-alias cddl='cd ~/Downloads/'
 alias less='less -R'
 alias ack='ack-grep --pager=less'
 alias sshx='TERM=xterm ssh'
