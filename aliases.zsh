@@ -1,6 +1,8 @@
 alias sz='source ~/.zshrc'
 
 # system
+alias ls='ls -AFG'
+alias ll='ls -l'
 alias df='df -h'
 alias du='du -h -c'
 alias mkdir='mkdir -p -v'
