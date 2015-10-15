@@ -42,7 +42,8 @@ source $ZSH/git/config.zsh
 
 bindkey "^R" history-incremental-search-backward
 
-autoload -U compinit && compinit
+# Run `compinit` manually for `zsh-completions`
+#autoload -U compinit && compinit
 unsetopt correct
 setopt no_hist_verify
 
