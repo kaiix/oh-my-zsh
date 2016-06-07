@@ -1,5 +1,3 @@
-cdpath=(. ~/projects/)
-
 # iTerm2
 case $TERM in
     *xterm*|ansi)
