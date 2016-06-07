@@ -7,23 +7,15 @@ alias df='df -h'
 alias du='du -h -c'
 alias mkdir='mkdir -p -v'
 alias less='less -R'
-alias ack='ack --pager=less'
+alias ack='ack-grep --pager=less'
 
 alias vihosts='sudo vim /etc/hosts'
+alias vissh='vim ~/.ssh/config'
+alias vivi='vim ~/.vimrc'
 alias rmattr="xattr -r -d com.apple.quarantine"
-alias flushdns="dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
-
-#alias runserver='python manage.py runserver'
-
-# mongodb
-alias rmlock='rm /usr/local/var/mongodb/mongod.lock && mongodb-start'
 
 # python
 alias doctest='python -m doctest -v'
-
-# django
-alias dbshell='python manage.py dbshell'
-alias djshell='python manage.py shell'
 
 # suffix aliases
 alias -s log="less -MN"
@@ -53,4 +45,3 @@ drop ()
     cp -R $1 ~/Dropbox/$2;
     echo "copy $1 -> Dropbox/$2";
 }
-
