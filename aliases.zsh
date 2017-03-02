@@ -7,7 +7,7 @@ alias df='df -h'
 alias du='du -h -c'
 alias mkdir='mkdir -p -v'
 alias less='less -R'
-alias ack='ack-grep --pager=less'
+alias ack='ag'
 
 alias vihosts='sudo vim /etc/hosts'
 alias vissh='vim ~/.ssh/config'
