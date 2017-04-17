@@ -13,6 +13,7 @@ alias vihosts='sudo vim /etc/hosts'
 alias vissh='vim ~/.ssh/config'
 alias vivi='vim ~/.vimrc'
 alias rmattr="xattr -r -d com.apple.quarantine"
+alias pr="hub pull-request -o -b"
 
 # python
 alias doctest='python -m doctest -v'
