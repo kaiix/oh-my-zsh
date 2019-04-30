@@ -7,3 +7,5 @@ log/
 *.swp
 .DS_Store
 completions/
+
+locals.zsh
