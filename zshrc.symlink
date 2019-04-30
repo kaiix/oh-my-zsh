@@ -35,7 +35,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(common-aliases zsh-completions git colored-man-pages autojump)
+plugins=(common-aliases zsh-completions git colored-man-pages autojump zsh-autosuggestions golang docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/config.zsh
@@ -54,6 +54,7 @@ done
 
 # command syntax highlight
 zle_highlight=(default:fg=green)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -61,6 +62,37 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:$PATH
 
 # Misc
 export PYTHONIOENCODING=utf-8
+export GOPATH=$HOME/go
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(direnv hook zsh)"
+
+fixssh() {
+    for key in SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
+        if (tmux show-environment | grep "^${key}" > /dev/null); then
+            value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
+            export ${key}="${value}"
+        fi
+    done
+}
+
+tm() {
+  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+  if [ $1 ]; then
+    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+  fi
+  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+}
+
+
+v() {
+  local files
+  files=$(grep '^>' ~/.viminfo | cut -c3- |
+          while read line; do
+            [ -f "${line/\~/$HOME}" ] && echo "$line"
+          done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
+}
 
 if [ `uname` = "Darwin" ]
 then
@@ -68,3 +100,5 @@ then
 fi
 
 source $ZSH/locals.zsh
+
+if [ -e /Users/kaiix/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/kaiix/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

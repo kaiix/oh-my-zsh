@@ -7,38 +7,23 @@ alias df='df -h'
 alias du='du -h -c'
 alias mkdir='mkdir -p -v'
 alias less='less -R'
-alias ack='ag'
+alias ag='ag --pager=less --path-to-ignore ~/.ignore'
+alias ack="ag"
 
+alias vi='vim'
 alias vihosts='sudo vim /etc/hosts'
 alias vissh='vim ~/.ssh/config'
-alias vivi='vim ~/.vimrc'
+alias virc='vim ~/.vimrc'
 alias rmattr="xattr -r -d com.apple.quarantine"
 alias pr="hub pull-request -o -b"
-
-# python
-alias doctest='python -m doctest -v'
+alias mkvenv='python3 -m venv --prompt $(basename $PWD) venv'
+alias help='tldr'
+alias du='ncdu --color dark -rr -x --exclude .git --exclude node_modules'
+alias ping='prettyping --nolegend'
+alias nv='nvim'
 
 # suffix aliases
 alias -s log="less -MN"
-
-runserver ()
-{
-    if [ $1 ]; then
-        echo en0 ip address is `ifconfig en0|grep "inet\ "|awk '{print $2}'`;
-    fi;
-    python manage.py runserver $1;
-}
-
-
-# svn
-alias svnst='svn st'
-#export export LESS='-x4FRSXs'
-alias svndiff='svn diff |less -x4FRSXs'
-
-svnaddx()
-{
-    svn st|grep '^?'|awk '{print $2}'|xargs -I{} svn add {}@
-}
 
 # misc
 drop ()
