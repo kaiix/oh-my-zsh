@@ -94,11 +94,6 @@ v() {
           done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
 }
 
-if [ `uname` = "Darwin" ]
-then
-    source $ZSH/mac.zsh
-fi
-
 source $ZSH/locals.zsh
 
 if [ -e /Users/kaiix/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/kaiix/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
