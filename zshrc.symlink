@@ -35,7 +35,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(common-aliases zsh-completions git colored-man-pages autojump zsh-autosuggestions golang docker docker-compose)
+plugins=(common-aliases zsh-completions git colored-man-pages autojump zsh-autosuggestions golang docker docker-compose fd)
 
 source $ZSH/oh-my-zsh.sh
 source $ZSH/config.zsh
@@ -62,7 +62,7 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:$PATH
 
 # Misc
 export PYTHONIOENCODING=utf-8
-export GOPATH=$HOME/go
+export GOPATH=$HOME/code/golang
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -95,5 +95,3 @@ v() {
 }
 
 source $ZSH/locals.zsh
-
-if [ -e /Users/kaiix/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/kaiix/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
